@@ -7,11 +7,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
-
 @Entity
+@NamedQueries({
+  @NamedQuery(name = "Member.findByEmail", query = "SELECT u FROM Member u WHERE u.email = :email")
+})
 public class Member {
 
   @Id
