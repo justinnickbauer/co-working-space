@@ -1,8 +1,8 @@
-package ch.justinbauer.m223.model;
+package ch.justinbauer.m223.model.dto;
 
 import javax.validation.constraints.NotBlank;
 
-public class Credential {
+public class CredentialDto {
 
   @NotBlank
   private String email;
