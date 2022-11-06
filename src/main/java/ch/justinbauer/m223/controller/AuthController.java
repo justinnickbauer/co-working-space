@@ -25,7 +25,8 @@ public class AuthController {
   
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    @Operation(summary = "Authenticate a user.", description = "Returns a token upon successful authentication.")
+    @PermitAll
+    @Operation(summary = "Authenticate a member.", description = "Returns a token upon successful authentication.")
     public Response create(@Valid CredentialDto credentialdto) {
       return this.authService.signin(credentialdto);
     }

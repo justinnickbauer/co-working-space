@@ -28,7 +28,7 @@ public class AuthService {
               String token = Jwt
                   .issuer("justinbauer")
                   .upn(member.get().getEmail())
-                  .groups(new HashSet<>(Arrays.asList("User", "Admin")))
+                  .groups(member.get().getRole().toString())
                   .expiresIn(Duration.ofHours(24))
                   .sign();
               return Response
