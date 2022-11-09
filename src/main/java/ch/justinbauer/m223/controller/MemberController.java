@@ -6,6 +6,8 @@ import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.Produces;
 import javax.inject.Inject;
+import javax.validation.Valid;
+import javax.validation.Validator;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -15,26 +17,33 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.ResponseBuilder;
 
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 import ch.justinbauer.m223.model.Member;
+import ch.justinbauer.m223.service.AuthService;
 import ch.justinbauer.m223.service.MemberService;
 import io.netty.handler.codec.http.HttpContent;
 
 @Path("/members")
 @Tag(name = "Members", description = "Handling of Members")
-@RolesAllowed({ "Mitglied", "Administrator" })
+@PermitAll
 public class MemberController {
 
     @Inject
     MemberService memberService;
 
+    @Inject
+    AuthService authService;
+
+    @Inject
+    Validator validator; 
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "Index all members.", description = "Returns a list of all members.")
+    @PermitAll
     public List<Member> index() {
         return memberService.findAll();
     }
@@ -44,8 +53,8 @@ public class MemberController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Operation(summary = "Creates a new member. Also known as registration.", description = "Creates a new member and returns the newly added member.")
     @PermitAll
-    public Member create(Member member) {
-        return memberService.createMember(member);
+    public Response create(@Valid Member member) {
+        return authService.signup(member);
     }
 
     @Path("/{id}")

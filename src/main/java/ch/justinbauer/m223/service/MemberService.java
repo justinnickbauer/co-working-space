@@ -7,6 +7,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
+import javax.validation.Validator;
 
 import ch.justinbauer.m223.model.Member;
 
@@ -15,10 +16,8 @@ public class MemberService {
     @Inject
     EntityManager entityManager;
 
-    @Transactional
-    public Member createMember(Member member) {
-        return entityManager.merge(member);
-    }
+    @Inject
+    Validator validator; 
 
     @Transactional
     public void deleteMember(Long id) {
@@ -33,7 +32,7 @@ public class MemberService {
     }
 
     public List<Member> findAll() {
-        var query = entityManager.createQuery("FROM ApplicationUser", Member.class);
+        var query = entityManager.createQuery("FROM Member", Member.class);
         return query.getResultList();
     }
 

@@ -1,12 +1,16 @@
 package ch.justinbauer.m223.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import java.time.LocalDate;
 
 @Entity
+@NamedQueries({
+  @NamedQuery(name = "Booking.findByUser", query = "SELECT u FROM Booking u WHERE u.member = :member")
+})
 public class Booking {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

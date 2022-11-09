@@ -5,9 +5,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 @Entity
+@NamedQueries({
+  @NamedQuery(name = "Role.findByTitle", query = "SELECT u FROM Role u WHERE u.title = :title")
+})
 public class Role {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

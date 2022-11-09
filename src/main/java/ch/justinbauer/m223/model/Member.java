@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.validation.constraints.NotBlank;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 @Entity
@@ -22,15 +23,19 @@ public class Member {
   @Schema(readOnly = true)
   private Long id;
   
+  @NotBlank(message="Firstname may not be blank")
   @Column(nullable = false )
   private String firstname;
 
+  @NotBlank(message="Lastname may not be blank")
   @Column(nullable = false )
   private String lastname;
 
+  @NotBlank(message="Email may not be blank")
   @Column(nullable = false, unique = true)
   private String email;
 
+  @NotBlank(message="Password may not be blank")
   @Column(nullable = false)
   private String password;
 
