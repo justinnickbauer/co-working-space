@@ -32,7 +32,7 @@ public class AuthService {
         Optional<Member> member = memberService.findByEmail(credentialDto.getEmail());
 
         try {
-            if (member.isPresent() && member.get().getPassword().equals(credentialDto.getPassword())) {
+            if (member.isPresent() && member.get().getPassword().equals(credentialDto.getPassword()) && member.get().isBlocked() == false) {
 
               String token = Jwt
                   .issuer("justinbauer")
@@ -46,7 +46,7 @@ public class AuthService {
                   .build();
             }
           } catch (Exception e) {
-            System.err.println("Couldn't validate password.");
+            System.err.println("Couldn't validate password." + e);
           }
       
           return Response.status(Response.Status.FORBIDDEN).build();
@@ -71,7 +71,7 @@ public class AuthService {
                   .ok(member)
                   .build();
           } catch (Exception e) {
-            System.err.println("Bad Parameters");
+            System.err.println("Bad Parameters" + e);
           }
       
           return Response.status(Response.Status.BAD_REQUEST).build();
