@@ -1,56 +1,21 @@
-# co-working-space Project
+# CoWorkingSpace API
+Die Aufgabe dieser API ist es, Kunden des CoWorkingSpace die möglichkeit zu bieten ihre Buchungen bezüglich der Arbeitsplätze bequem online zu erledigen.
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+## Einrichtung der Entwicklungsumgebung
+Stelle sicher, dass Docker installiert ist und läuft.
+Stelle sicher, dass Visual Studio Code und die Erweiterung Remote Container installiert ist.
+Klone (clone) das Projekt lokal, um damit arbeiten zu können.
+Öffne das Projekt mit Visual Studio Code.
+Öffne das Projekt im Entwicklungscontainer.
+-- Kopiert von PunchClock Repository
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+## Starten der Applikation
+Starte das Projekt mit dem Kommando Quarkus: Debug current Quarkus Project
+Probiere die Client-Applikation unter http://localhost:8080 aus.
+Schaue die API auf http://localhost:8080/q/swagger-ui/ an.
+-- Kopiert von PunchClock Repository
 
-## Running the application in dev mode
+## Laden der Testdaten
+Die Testdaten werden aus der Klasse TestDataService.java geladen. Diese befindet sich im Pfad: /workspace/src/main/java/ch/justinbauer/m223/service/TestDataService.java
 
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw compile quarkus:dev
-```
-
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
-
-## Packaging and running the application
-
-The application can be packaged using:
-```shell script
-./mvnw package
-```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
-
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
-```
-
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using: 
-```shell script
-./mvnw package -Pnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Pnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/co-working-space-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
-
-## Provided Code
-
-### RESTEasy Reactive
-
-Easily start your Reactive RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+## Anpassungen der Planung
