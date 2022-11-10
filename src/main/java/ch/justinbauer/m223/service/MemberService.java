@@ -43,4 +43,12 @@ public class MemberService {
                 .getResultStream()
                 .findFirst();
     }
+
+    public Optional<Member> findById(Long id) {
+        return entityManager
+                .createNamedQuery("Member.findById", Member.class)
+                .setParameter("id", id)
+                .getResultStream()
+                .findFirst();
+    }
 }

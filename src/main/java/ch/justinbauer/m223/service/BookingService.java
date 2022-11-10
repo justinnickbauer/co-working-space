@@ -12,7 +12,6 @@ import javax.validation.Validator;
 import javax.ws.rs.core.Response;
 
 import ch.justinbauer.m223.model.Booking;
-import ch.justinbauer.m223.model.Member;
 
 @ApplicationScoped
 public class BookingService {
@@ -22,6 +21,9 @@ public class BookingService {
 
     @Inject
     Validator validator; 
+    
+    @Inject 
+    MemberService memberService;
 
     @Transactional
     public void deleteBooking(Long id) {
@@ -40,6 +42,20 @@ public class BookingService {
         return query.getResultList();
     }
 
+    public Response findAllByMember(Long id) {
+        try {
+            return Response
+            .ok(entityManager
+            .createNamedQuery("Booking.findByMember", Booking.class)
+            .setParameter("id", id)
+            .getResultList())
+            .build();
+        } catch (Exception e){
+            System.err.println("Couldn't validate password." + e);
+        }
+        return Response.status(Response.Status.FORBIDDEN).build();
+    }
+
     @Transactional
     public Response createBooking(Booking booking) {
         try {
@@ -52,12 +68,4 @@ public class BookingService {
           }
           return Response.status(Response.Status.BAD_REQUEST).build();
     }
-
-    public List<Booking> findByUser(Member member) {
-        return entityManager
-                .createNamedQuery("Booking.findByUser", Booking.class)
-                .setParameter("member", member)
-                .getResultList();
-    }
-
 }
