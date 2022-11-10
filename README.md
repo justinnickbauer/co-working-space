@@ -24,12 +24,12 @@ Die Testdaten werden aus der Klasse TestDataService.java geladen. Diese befindet
 Folgende Anpauungen der Planung wurden vorgenommen:
 
 ### Fachklassendiagramm
-Folegnde Variablen wurden der Klassen Member.java hinzugefügt:
+Folegnde Variablen wurden der Klasse Member.java hinzugefügt:
 ```
 private boolean isBlocked;
 ```
 
-Folegnde Variablen wurden der Klassen .java hinzugefügt:
+Folegnde Variablen wurden der Klasse Booking.java hinzugefügt:
 ```
 private Boolean withPrinter;
 ```
