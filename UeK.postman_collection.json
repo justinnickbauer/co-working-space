@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "6aa46bf0-ba51-4c9c-aa7b-18bc41f0ba4d",
+		"name": "UeK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16797651"
+	},
+	"item": [
+		{
+			"name": "Create Booking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJqdXN0aW5iYXVlciIsInVwbiI6Imp1c3Rpbi5iYXVlckBnbWFpbC5jb20iLCJncm91cHMiOlsiQWRtaW5pc3RyYXRvciJdLCJpYXQiOjE2NjgwNjg2NTgsImV4cCI6MTY2ODE1NTA1OCwianRpIjoiZTFlNjU4MWUtMjlhZi00NzAxLWEyN2ItMmZhMTExYzQyNGI4In0.fVzdlulmLWRnndUhvP7pRs70NwKcj_0tk07zU7t-iOR0DlIctogN-ZoyReyQ6d6zhAA8sOdwsAep9cQmtnG6EoFxXAYaRpTpX11f2vb_KilBFo_bRHLrf5Vin02aID-ZuQoMsvCZvfLqYahq583Eb0Y7NkB9GWnli_nyeitBRyz2mZ_EGxigScZ2HuRg4G4J-4pG1Bm1BfodxJ0VMj3IO5h6-_Zms4L-_K9UZr05lldRJi4x8gDrX7GYmR24NB5tuziH6_GtE0Stdqga70LBWaQeCAIFdjEmrhZGlfZs1QLz0aPDo41EM3Ffv2xl8lcj6H-3F622BuNg7PamfW-bvg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2017-01-13\",\n    \"place\": {\n        \"id\": 1,\n        \"title\": \"Einzelplatz\"\n    },\n    \"duration\": {\n        \"id\": 1,\n        \"title\": \"Vormittag\"\n    },\n    \"status\": {\n        \"id\": 1,\n        \"title\": \"Offen\"\n    },\n    \"member\": {\n        \"id\": 1,\n        \"firstname\": \"Justin\",\n        \"lastname\": \"Bauer\",\n        \"email\": \"justin.bauer@gmail.com\",\n        \"password\": \"Camilla75\",\n            \"role\": {\n                \"id\": 1,\n                \"title\": \"Mitglied\"\n            }\n    }\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/bookings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignIn",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJqdXN0aW5iYXVlciIsInVwbiI6Imp1c3Rpbi5iYXVlckBkZ21haWwuY29tIiwiZ3JvdXBzIjpbIkFkbWluaXN0cmF0b3IiXSwiaWF0IjoxNjY4MDI1OTA2LCJleHAiOjE2NjgxMTIzMDYsImp0aSI6IjVmYTQxMWQwLTcxNDEtNGY5MC1iMDk1LWMwNzA1NTc5YTcyNSJ9.ZhcVQ_bwYchHp_UQ2JegpFoWwhH9OOLfyETTyOz9m-q1LRMTYFqp1mPPonF7Affl6Ry266kxawNws8fAQAykQgtuijXBhSjvP9QfHMG6sG3nJmUhEgbXozfNttk3F97CO0eHCnCBRi6ojlK6yTK8ZRsriW22xu0NMHyABQpt_746wFuoIjzt2sBcGPttp9pm1_WRd7pIC7l-6jd0MVN8ggunjy6CAY8rzE_WJp5KAQS9CxpBOb5dLSq6I81aHbPUK10mCf5ZJHDB-U5V3rKJbZwWLTUD1S7MUJl0eSKM0TMaRfcFt04uz6MwnBTk1t4KBm83iNEiBaTkqX4192QHSA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"justin.bauer@gmail.com\",\n    \"password\": \"Camilla75\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Members",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJqdXN0aW5iYXVlciIsInVwbiI6Imp1c3Rpbi5iYXVlckBnbWFpbC5jb20iLCJncm91cHMiOlsiQWRtaW5pc3RyYXRvciJdLCJpYXQiOjE2NjgwNjg2NTgsImV4cCI6MTY2ODE1NTA1OCwianRpIjoiZTFlNjU4MWUtMjlhZi00NzAxLWEyN2ItMmZhMTExYzQyNGI4In0.fVzdlulmLWRnndUhvP7pRs70NwKcj_0tk07zU7t-iOR0DlIctogN-ZoyReyQ6d6zhAA8sOdwsAep9cQmtnG6EoFxXAYaRpTpX11f2vb_KilBFo_bRHLrf5Vin02aID-ZuQoMsvCZvfLqYahq583Eb0Y7NkB9GWnli_nyeitBRyz2mZ_EGxigScZ2HuRg4G4J-4pG1Bm1BfodxJ0VMj3IO5h6-_Zms4L-_K9UZr05lldRJi4x8gDrX7GYmR24NB5tuziH6_GtE0Stdqga70LBWaQeCAIFdjEmrhZGlfZs1QLz0aPDo41EM3Ffv2xl8lcj6H-3F622BuNg7PamfW-bvg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJqdXN0aW5iYXVlciIsInVwbiI6Imp1c3Rpbi5iYXVlckBnbWFpbC5jb20iLCJncm91cHMiOlsiQWRtaW5pc3RyYXRvciJdLCJpYXQiOjE2NjgwNjYwMzIsImV4cCI6MTY2ODE1MjQzMiwianRpIjoiNzc2OWI1MGQtOWE2ZS00ZDhlLTg4MWEtMTBkYzU5NzkxNDZkIn0.wCm3Ei4aaOzjIxiVgBE5HIqegcvQ8dOlvfM2XR7I8YFLWzPCaDbXWrZ8gaHyt-LfFD4X-hlFWIezo6N_FOCzNXOK86y4oLb58LjAM1I1tUxnvspE_pwdrNbv6OaefoGOKx23AmNkB-ote7u-n4S9isOonGbUPXhCFTNgGZw5JiRLtaUwjn-0Oq2yczlr1c3COZLZ3vVZI-pTv4WGA9QkiT6TCPFF6RMVHrj749K9g1Gm56Si0iNI0SyxIQ1eQxJFyrPhpzzQubJmKzxC0kVdlReOQ93vD7fpIA1QfwccU-5VlFVq5Uim2SCwTQQnwBLq4pTsBsOsSVrArYe-OPynig",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/members",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"members"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Booking By Member",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJqdXN0aW5iYXVlciIsInVwbiI6Imp1c3Rpbi5iYXVlckBnbWFpbC5jb20iLCJncm91cHMiOlsiQWRtaW5pc3RyYXRvciJdLCJpYXQiOjE2NjgwNjg0NjksImV4cCI6MTY2ODE1NDg2OSwianRpIjoiN2U2NDcyZDktMTNkMy00ZDY2LTkzNGMtYTlkMmY3NDVhODMzIn0.vt9gSAmOA6CvhfbIJRGLa0Sg-gZ_UxNgQ1r5KUqEf5v0zvsvNJV226zn6tDF_gzCRVkWLWzFiSDgOtIUsF5uW1vPGtMQPasjONdejV771-7F-Rww3MBzL7OhtEv6WnSqz--ucrCwpWOduNHsik4NTtqnrkxVDP6yBckiJ6qO2z8sPWRiRDnLZGj6uumP7pdglRlM1psYWw-IFAM4o6G5HvqQk0GPwsTY8BOY-XkCkYjd4bPRMyXR9QLstjuKjVHlSESV_V25BhEWGi2VFXmVLFAqKQqWGeqetBySbyxmot2bhqwrAxAnnVahsli7b5HxBjhn-gzI7K8vU0CV952HtQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/bookings/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Booking",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJqdXN0aW5iYXVlciIsInVwbiI6Imp1c3Rpbi5iYXVlckBnbWFpbC5jb20iLCJncm91cHMiOlsiQWRtaW5pc3RyYXRvciJdLCJpYXQiOjE2NjgwNjg2NTgsImV4cCI6MTY2ODE1NTA1OCwianRpIjoiZTFlNjU4MWUtMjlhZi00NzAxLWEyN2ItMmZhMTExYzQyNGI4In0.fVzdlulmLWRnndUhvP7pRs70NwKcj_0tk07zU7t-iOR0DlIctogN-ZoyReyQ6d6zhAA8sOdwsAep9cQmtnG6EoFxXAYaRpTpX11f2vb_KilBFo_bRHLrf5Vin02aID-ZuQoMsvCZvfLqYahq583Eb0Y7NkB9GWnli_nyeitBRyz2mZ_EGxigScZ2HuRg4G4J-4pG1Bm1BfodxJ0VMj3IO5h6-_Zms4L-_K9UZr05lldRJi4x8gDrX7GYmR24NB5tuziH6_GtE0Stdqga70LBWaQeCAIFdjEmrhZGlfZs1QLz0aPDo41EM3Ffv2xl8lcj6H-3F622BuNg7PamfW-bvg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"date\": \"2017-01-14\",\n    \"place\": {\n        \"id\": 1,\n        \"title\": \"Einzelplatz\"\n    },\n    \"duration\": {\n        \"id\": 1,\n        \"title\": \"Nachmittag\"\n    },\n    \"status\": {\n        \"id\": 1,\n        \"title\": \"Offen\"\n    },\n    \"member\": {\n        \"id\": 1,\n        \"firstname\": \"Justin\",\n        \"lastname\": \"Bauer\",\n        \"email\": \"justin.bauer@gmail.com\",\n        \"password\": \"Camilla75\",\n        \"role\": {\n            \"id\": 2,\n            \"title\": \"Administrator\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/bookings/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Booking",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookings/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Member",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bookings/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bookings",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Member",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstname\": \"Justin\",\n    \"lastname\": \"Bauer\",\n    \"email\": \"justin.bauer@gmaigl.com\",\n    \"password\": \"Camilla75\",\n    \"isBlocked\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/members",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"members"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Member",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"firstname\": \"Max\",\n    \"lastname\": \"Mustermann\",\n    \"email\": \"justin.bauer@gmaigl.com\",\n    \"password\": \"Camilla75\",\n    \"role\": {\n        \"id\": 1,\n        \"title\": \"Mitglied\"\n    },\n    \"blocked\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/members/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"members",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
