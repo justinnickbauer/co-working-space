@@ -51,3 +51,6 @@ Folgende Schnittstellen sind entfernt worden:
 
 *Anmerkung:*
 Die Pfade wurden jeweils angepasst, /member wurde zu /members und /booking wurde zu /bookings.
+
+## Postman Tests
+Sämtliche Postman Test sind in der Datei "" gespeichert.
