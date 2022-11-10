@@ -43,8 +43,8 @@ public class MemberController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "Index all members.", description = "Returns a list of all members.")
-    @PermitAll
-    public List<Member> index() {
+    @RolesAllowed({"Administrator" })
+    public List<Member> findAll() {
         return memberService.findAll();
     }
 
@@ -59,6 +59,7 @@ public class MemberController {
 
     @Path("/{id}")
     @DELETE
+    @RolesAllowed({"Administrator"})
     @Operation(summary = "Deletes an member.", description = "Deletes an member by its id.")
     public void delete(@PathParam("id") Long id) {
         memberService.deleteMember(id);
@@ -66,6 +67,7 @@ public class MemberController {
 
     @Path("/{id}")
     @PUT
+    @RolesAllowed({"Administrator"})
     @Operation(summary = "Updates an member.", description = "Updates an member by its id.")
     public Member update(@PathParam("id") Long id, Member member) {
         return memberService.updateMember(id, member);
