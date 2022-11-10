@@ -1,0 +1,191 @@
+commit 8e75b29191330e9609b774885bf2102f852f750d
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 10 12:29:21 2022 +0000
+
+    fix: issuer value
+
+commit 607bdea3ffd432b9741506a6b853ebce7a6c20fe
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 10 12:28:48 2022 +0000
+
+    fix: relationen testdata
+
+commit 3519c08648f23ba2465cbc1e84527d6d97dd5cbb
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 10 12:28:03 2022 +0000
+
+    feat: add pom abhaengigkeiten
+
+commit de92ed72fd65e15f14c978c28ed8e5d53fd3a39c
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 10 12:27:33 2022 +0000
+
+    fix: namequerys abhaengigkeiten
+
+commit 2a725344203f4b34e4041d24069fd821f618c8f4
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 10 12:24:48 2022 +0000
+
+    feat: add schnittsetllen definition geloescht
+
+commit 63272c5530c1a6e443df776d0eb4978ba9b88e07
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 10 12:16:24 2022 +0000
+
+    feat: add schnittstellen verbesserung
+
+commit 4a884fa84e175dbc19837d9b7ab58ed3e5927319
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 10 09:59:26 2022 +0000
+
+    feat: add Readme.md
+
+commit 91a92bf56a67e2f225b2fc73d48ebf7590a92200
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 10 09:18:18 2022 +0000
+
+    feat: add auth methods
+
+commit f21dced42332d4059f44eb1ddf35d48924249749
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 10 09:17:46 2022 +0000
+
+    fix: add isBlocked checker
+
+commit 5ee389c2e95d54d49722e3127c6084050ebb84e3
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 10 09:16:36 2022 +0000
+
+    fix: reafctor model classes
+
+commit e01e6d3ace399bd1ae4992cd71c52e4d191d78fb
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 10 09:16:13 2022 +0000
+
+    feat: add getter setter for isblocked
+
+commit 7183ede8806c44d136a10f554141bc5d1e6efa7c
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 10 09:15:39 2022 +0000
+
+    fix: update booking controller
+
+commit bbc7296a94a6c1f7a80bdf64c1196d5130c251e1
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Wed Nov 9 21:48:58 2022 +0000
+
+    fix: refactoring controller
+
+commit 02e06c0ec07eb92646c310de73093eb590979864
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Sun Nov 6 15:45:31 2022 +0000
+
+    feat: add test data class
+
+commit 9561784a646392d193f98c8519e15a02579d0647
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Sun Nov 6 15:45:05 2022 +0000
+
+    fix: entity controllers
+
+commit e1af13b425d80350bcc3a7512fc67dc7f8a37a93
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Sun Nov 6 14:22:33 2022 +0000
+
+    feat: add keys
+
+commit 9e0173ba815296b4e12d6b643560fdebf463d069
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Sun Nov 6 14:14:50 2022 +0000
+
+    feat: add membercontroller
+
+commit e7360fc1e8a16f9cb7f26149c8c08b9c62152238
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Sun Nov 6 13:58:32 2022 +0000
+
+    feat: add authcontroller
+
+commit 9d82589dff29052c215af1ffd481ab2fa715c1a1
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 3 15:30:38 2022 +0000
+
+    fix: fixed docker properties
+
+commit 855cb7d2c14c74f74491301bf83ebe930769bece
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 3 13:48:24 2022 +0000
+
+    fix: add Dto Folder and rename credentials.java
+
+commit 4b373a5ae4c529e03429cfd4a26601eb44be0140
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 3 13:44:24 2022 +0000
+
+    feat: add Status Model
+
+commit e27b640be8403a53254d881f7eba74f99e073d74
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 3 13:44:10 2022 +0000
+
+    feat: add Role Model
+
+commit a617053571cbffffb97b86b75da39cb5134aeba7
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 3 13:43:59 2022 +0000
+
+    feat: add Place Model
+
+commit d964d34a5b66f0b360a4acf543dda2bac71c7d9c
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 3 13:43:49 2022 +0000
+
+    feat: add Member Model
+
+commit cb8423825f19760777fe596c3d4c560162034277
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 3 13:43:35 2022 +0000
+
+    feat: add Duration Model
+
+commit 3a8110cf86366f43d5ad83c2438dee1bfd43903a
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 3 13:43:15 2022 +0000
+
+    feat: add Credential Dto Model
+
+commit a0006c93e9f494dbf48a4eddf04c33d32e5a5458
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 3 13:42:47 2022 +0000
+
+    feat: add Booking Model
+
+commit 699e165b02137ac8222fc4e9db240a2e0def0327
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 3 12:53:16 2022 +0000
+
+    fix: update dependency
+
+commit 29005c119920880e5d0e1c6a656f34a19294e2e8
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 3 12:20:26 2022 +0000
+
+    fix: docker files
+
+commit c42d9127568c3e596b66612ef1714b6b15bb631c
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 3 12:20:07 2022 +0000
+
+    fix:  fix dev configuration
+
+commit 1f5dfa6b27a99a23cf13acd19cd67a79bafb5601
+Author: justinnickbauer <jbpemo@gmail.com>
+Date:   Thu Nov 3 12:03:22 2022 +0000
+
+    feat: generate project
+
+commit b4522b0c2a93b47f0684bfd4c656f18699ddd2ae
+Author: Justin Bauer <55232645+justinnickbauer@users.noreply.github.com>
+Date:   Thu Nov 3 12:52:45 2022 +0100
+
+    Initial commit

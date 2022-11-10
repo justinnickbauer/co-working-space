@@ -16,7 +16,6 @@ import ch.justinbauer.m223.model.Role;
 import ch.justinbauer.m223.model.Status;
 import io.quarkus.arc.profile.IfBuildProfile;
 import io.quarkus.runtime.StartupEvent;
-import net.bytebuddy.asm.Advice.Local;
 
 @IfBuildProfile("dev")
 @ApplicationScoped

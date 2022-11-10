@@ -24,7 +24,6 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import ch.justinbauer.m223.model.Member;
 import ch.justinbauer.m223.service.AuthService;
 import ch.justinbauer.m223.service.MemberService;
-import io.netty.handler.codec.http.HttpContent;
 
 @Path("/members")
 @Tag(name = "Members", description = "Handling of Members")
