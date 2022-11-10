@@ -8,7 +8,7 @@ import javax.persistence.Id;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
-@Entity
+@Entity(name = "PLACE")
 public class Place {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)

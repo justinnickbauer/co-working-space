@@ -10,9 +10,9 @@ import javax.persistence.NamedQuery;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
-@Entity
+@Entity(name = "ROLE")
 @NamedQueries({
-  @NamedQuery(name = "Role.findByTitle", query = "SELECT u FROM Role u WHERE u.title = :title")
+  @NamedQuery(name = "Role.findByTitle", query = "SELECT u FROM ROLE u WHERE u.title = :title")
 })
 public class Role {
   @Id

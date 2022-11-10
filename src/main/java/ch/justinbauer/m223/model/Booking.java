@@ -1,15 +1,14 @@
 package ch.justinbauer.m223.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
 import java.time.LocalDate;
 
-@Entity
+@Entity(name = "BOOKING")
 @NamedQueries({
-  @NamedQuery(name = "Booking.findByMember", query = "SELECT u FROM Booking u WHERE u.member.id = :id")
+  @NamedQuery(name = "Booking.findByMember", query = "SELECT u FROM BOOKING u WHERE u.member.id = :id")
 })
 public class Booking {
   @Id
@@ -87,5 +86,14 @@ public class Booking {
     this.member = member;
   }
 
+public Boolean getWithPrinter() {
+    return withPrinter;
+}
+
+public void setWithPrinter(Boolean withPrinter) {
+    this.withPrinter = withPrinter;
+}
+
+  
   
 }

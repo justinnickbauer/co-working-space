@@ -12,10 +12,10 @@ import javax.persistence.NamedQuery;
 import javax.validation.constraints.NotBlank;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
-@Entity
+@Entity(name = "MEMBER")
 @NamedQueries({
-  @NamedQuery(name = "Member.findByEmail", query = "SELECT u FROM Member u WHERE u.email = :email"),
-  @NamedQuery(name = "Member.findById", query = "SELECT u FROM Member u WHERE u.id = :id")
+  @NamedQuery(name = "Member.findByEmail", query = "SELECT u FROM MEMBER u WHERE u.email = :email"),
+  @NamedQuery(name = "Member.findById", query = "SELECT u FROM MEMBER u WHERE u.id = :id")
 })
 public class Member {
 
