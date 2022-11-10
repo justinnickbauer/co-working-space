@@ -41,3 +41,13 @@ Folgende Schnittstellen sind dazu gekommen:
 | Member Registrieren                   | /signup   | POST         | -         | 201 Created, Member wurde erstellt                                |
 | Member anmelden                       | /signin   | POST         | -         | 201 Created, Member wurde erstellt                                |
 | Bookings von einem Mitglied auflisten | /bookings | GET          | /{id}     | 200 OK, Bookings von einem bestimmten Mitglied wird zurückgegeben |
+
+Folgende Schnittstellen sind entfernt worden:
+| Beschreibung                | Pfad            | http-Methode | Parameter | Erfolg                                                   |
+|-----------------------------|-----------------|--------------|-----------|----------------------------------------------------------|
+| Member finden               | /member         | GET          | /{id}     | 200 OK, Ein bestimmter member wird ausgegeben            |
+| Booking nach Status filtern | /booking/status | GET          | /{id}     | 200 OK, Booking mit bestimmten Status wird zurückgegeben |
+| Booking finden              | /booking        | GET          | /{id}     | 200 OK, Ein bestimmtes Booking wird zurückgegeben        |
+
+*Anmerkung:*
+Die Pfade wurden jeweils angepasst, /member wurde zu /members und /booking wurde zu /bookings.
