@@ -14,7 +14,8 @@ import javax.validation.constraints.NotBlank;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 @Entity
 @NamedQueries({
-  @NamedQuery(name = "Member.findByEmail", query = "SELECT u FROM Member u WHERE u.email = :email")
+  @NamedQuery(name = "Member.findByEmail", query = "SELECT u FROM Member u WHERE u.email = :email"),
+  @NamedQuery(name = "Member.findById", query = "SELECT u FROM Member u WHERE u.id = :id")
 })
 public class Member {
 
@@ -93,6 +94,16 @@ public class Member {
   public void setRole(Role role) {
     this.role = role;
   }
+
+  public boolean isBlocked() {
+    return isBlocked;
+  }
+
+  public void setBlocked(boolean isBlocked) {
+    this.isBlocked = isBlocked;
+  }
+
+  
 
   
 }

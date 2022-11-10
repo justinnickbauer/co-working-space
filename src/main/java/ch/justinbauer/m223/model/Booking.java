@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 @Entity
 @NamedQueries({
-  @NamedQuery(name = "Booking.findByUser", query = "SELECT u FROM Booking u WHERE u.member = :member")
+  @NamedQuery(name = "Booking.findByMember", query = "SELECT u FROM Booking u WHERE u.member.id = :id")
 })
 public class Booking {
   @Id
@@ -19,6 +19,9 @@ public class Booking {
 
   @Column(nullable = false)
   private LocalDate date;
+
+  @Column(nullable = false)
+  private Boolean withPrinter;
 
   @ManyToOne
   @JoinColumn(name="place_id", nullable=false)
