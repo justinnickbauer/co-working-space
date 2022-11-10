@@ -3,6 +3,7 @@ package ch.justinbauer.m223.controller;
 import java.util.List;
 
 import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.Produces;
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -38,31 +39,31 @@ public class BookingController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "Index all bookings.", description = "Returns a list of all bookings.")
-    @PermitAll
+    @RolesAllowed({"Administrator"})
     public List<Booking> index() {
         return bookingService.findAll();
     }
 
     @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "Index all bookings.", description = "Returns a list of all bookings.")
-    @PermitAll
     @Path("/{id}")
-    public List<Booking> findByUser(@PathParam("id") Long id) {
-        return bookingService.findByUser(id);
+    @Produces(MediaType.APPLICATION_JSON)
+    @Operation(summary = "Index all bookings by Member.", description = "Returns a list of all bookings from Member.")
+    @RolesAllowed({"Mitglied", "Administrator"})
+    public Response findAllByMember(@PathParam("id") long id) {
+        return bookingService.findAllByMember(id);
     }
-
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Operation(summary = "Creates a new booking.", description = "Creates a new booking and returns the newly added booking.")
-    @PermitAll
+    @RolesAllowed({"Administrator", "Mitglied" })
     public Response create(Booking booking) {
         return bookingService.createBooking(booking);
     }
 
     @Path("/{id}")
     @DELETE
+    @RolesAllowed({"Administrator"})
     @Operation(summary = "Deletes an booking.", description = "Deletes an booking by its id.")
     public void delete(@PathParam("id") Long id) {
         bookingService.deleteBooking(id);
@@ -70,6 +71,7 @@ public class BookingController {
 
     @Path("/{id}")
     @PUT
+    @RolesAllowed({"Administrator", "Mitglied" })
     @Operation(summary = "Updates an booking.", description = "Updates an booking by its id.")
     public Booking update(@PathParam("id") Long id, Booking booking) {
         return bookingService.updateBooking(id, booking);
