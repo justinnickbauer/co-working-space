@@ -32,7 +32,7 @@ public class MemberService {
     }
 
     public List<Member> findAll() {
-        var query = entityManager.createQuery("FROM Member", Member.class);
+        var query = entityManager.createQuery("FROM MEMBER", Member.class);
         return query.getResultList();
     }
 
